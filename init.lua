@@ -3,16 +3,20 @@
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.shiftwidth = 4
-vim.opt.guicursor = 'n-v-i-c:block-Cursor'
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+
+-- Set indentation spaces
+vim.g.shiftwidth = 4
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
+
+-- Set block cursor everywhere
+vim.opt.guicursor = 'n-v-i-c:block-Cursor'
 
 -- Make line numbers default
 vim.o.number = true
