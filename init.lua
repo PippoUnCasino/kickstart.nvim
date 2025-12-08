@@ -206,33 +206,59 @@ require('lazy').setup({
   },
 
   {
-    'uhs-robert/oasis.nvim',
-    lazy = false,
+    'rose-pine/neovim',
     priority = 1000,
     config = function()
-      require('oasis').setup {
-        dark_style = 'lagoon', -- Style to use when vim.o.background is "dark"
-        light_style = 'dawn', -- Style to use when vim.o.background is "light"
-        style = nil, -- Optional: Set a single style to disable auto-switching (e.g., "lagoon", "desert")
-        use_legacy_comments = false, -- Uses the legacy comment color from desert.vim for the "desert" style only (a bright sky blue)
+      require('rose-pine').setup {
+        variant = 'moon',
+        dark_variant = 'moon',
+        dim_inactive_windows = false,
+        extend_background_behind_borders = true,
 
-        -- Text styling - disable individual styles if you like
-        styles = {
-          bold = true, -- Enable bold text (keywords, functions, etc.)
-          italic = false, -- Enable italics (comments, certain keywords)
-          underline = true, -- Enable underlined text (matching words)
-          undercurl = true, -- Enable undercurl for diagnostics/spelling
-          strikethrough = true, -- Enable strikethrough text (deprecations)
+        enable = {
+          terminal = true,
+          legacy_highlights = true,
+          migrations = true,
         },
 
-        -- Display options
-        transparent = true, -- Set to true for transparent backgrounds (bye bye theme backgrounds)
-        terminal_colors = true, -- Apply Oasis colors to Neovim's built-in terminal
+        styles = {
+          bold = true,
+          italic = false,
+          transparency = true,
+        },
 
-        palette_overrides = {}, -- Override colors in specific palettes
-        highlight_overrides = {}, -- Override specific highlight groups
+        groups = {
+          border = 'muted',
+          link = 'iris',
+          panel = 'surface',
+
+          error = 'love',
+          hint = 'iris',
+          info = 'foam',
+          note = 'pine',
+          todo = 'rose',
+          warn = 'gold',
+
+          git_add = 'foam',
+          git_change = 'rose',
+          git_delete = 'love',
+          git_dirty = 'rose',
+          git_ignore = 'muted',
+          git_merge = 'iris',
+          git_rename = 'pine',
+          git_stage = 'iris',
+          git_text = 'rose',
+          git_untracked = 'subtle',
+
+          h1 = 'iris',
+          h2 = 'foam',
+          h3 = 'rose',
+          h4 = 'gold',
+          h5 = 'pine',
+          h6 = 'foam',
+        },
       }
-      vim.cmd.colorscheme 'oasis-midnight'
+      vim.cmd.colorscheme 'rose-pine'
     end,
   },
 
